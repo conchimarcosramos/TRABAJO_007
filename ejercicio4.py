@@ -4,7 +4,7 @@ print("\n--- EJERCICIO 4: Pandas Básico ---")
 
 #Crear datos de ejemplo
 datos = {
-    'Alumno': ['Ana', 'Luis', 'Carlos', 'Marta'],
+    'Alumno': ["Ana", "Luis", "Carlos", "Marta"],
     'Nota': [8.5, 7.3, 9.0, 4.7],
     'Aprobado': [True, True, True, False]
 }
@@ -28,5 +28,4 @@ print(f"\n--- Promedio de Notas: {promedio:.2f} ---")
 
 #{promedio:.2f} formatea el valor de 'promedio' como un número decimal con dos cifras decimales,    
 #lo que es útil para mostrar promedios o valores numéricos de manera más legible.
-
-    
+ 
