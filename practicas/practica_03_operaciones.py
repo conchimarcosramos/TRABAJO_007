@@ -26,6 +26,5 @@ def main():
     print(f"Módulo (resto): {a} % {b} = {a % b}")
     print(f"Potencia: {a} ** {b} = {a ** b}")
 
-
 if __name__ == "__main__":
     main()

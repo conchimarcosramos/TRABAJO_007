@@ -37,6 +37,5 @@ def main():
     print(f"Tipo de nombre: {type(nombre)}")
     print(f"Tipo de booleano: {type(es_verdadero)}")
 
-
 if __name__ == "__main__":
     main()
