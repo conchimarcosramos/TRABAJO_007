@@ -60,6 +60,9 @@ print(f"Promedio de 1,2,3,4,5: {calcular_promedio(1,2,3,4,5)}")
 print(f"Promedio de 10,20,30: {calcular_promedio(10,20,30)}")
 
 # Ejercicio 7: Contar líneas de un archivo
+import tempfile
+import os
+
 def contar_lineas(nombre_archivo):
     try:
         with open(nombre_archivo, 'r') as archivo:
@@ -67,12 +70,15 @@ def contar_lineas(nombre_archivo):
     except FileNotFoundError:
         return 0
 
-# Crear un archivo de ejemplo para probar
-with open('/tmp/ejemplo_lineas.txt', 'w') as f:
+# Crear un archivo de ejemplo para probar (multiplataforma)
+temp_dir = tempfile.gettempdir()
+ejemplo_path = os.path.join(temp_dir, 'ejemplo_lineas.txt')
+
+with open(ejemplo_path, 'w') as f:
     f.write("Línea 1\nLínea 2\nLínea 3\n")
 
-print(f"Líneas en archivo: {contar_lineas('/tmp/ejemplo_lineas.txt')}")
-print(f"Líneas en archivo inexistente: {contar_lineas('/tmp/no_existe.txt')}")
+print(f"Líneas en archivo: {contar_lineas(ejemplo_path)}")
+print(f"Líneas en archivo inexistente: {contar_lineas(os.path.join(temp_dir, 'no_existe.txt'))}")
 
 # Ejercicio 8: Función lambda que duplica
 duplicar = lambda x: x * 2

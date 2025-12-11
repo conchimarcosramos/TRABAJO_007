@@ -83,15 +83,21 @@ print(f"Pares (filter): {pares}")
 # Ejercicio 8: Manejo de archivos
 print("\n=== Ejercicio 8: Manejo de Archivos ===")
 
-# Escribir archivo
-with open('/tmp/ejemplo.txt', 'w') as archivo:
+import tempfile
+import os
+
+# Escribir archivo (usando tempfile para compatibilidad multiplataforma)
+temp_dir = tempfile.gettempdir()
+archivo_path = os.path.join(temp_dir, 'ejemplo.txt')
+
+with open(archivo_path, 'w') as archivo:
     archivo.write("Primera línea\n")
     archivo.write("Segunda línea\n")
     archivo.write("Tercera línea\n")
 print("Archivo escrito correctamente")
 
 # Leer archivo
-with open('/tmp/ejemplo.txt', 'r') as archivo:
+with open(archivo_path, 'r') as archivo:
     contenido = archivo.read()
     print("Contenido del archivo:")
     print(contenido)

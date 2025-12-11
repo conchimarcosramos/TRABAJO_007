@@ -153,6 +153,9 @@ print(f"¿Es 20 primo? {Matematicas.es_primo(20)}")
 # Ejercicio 8: Context Managers
 print("\n=== Ejercicio 8: Context Managers ===")
 
+import tempfile
+import os
+
 class MiArchivo:
     def __init__(self, nombre, modo):
         self.nombre = nombre
@@ -169,7 +172,10 @@ class MiArchivo:
         if self.archivo:
             self.archivo.close()
 
-with MiArchivo('/tmp/test.txt', 'w') as f:
+temp_dir = tempfile.gettempdir()
+test_file = os.path.join(temp_dir, 'test.txt')
+
+with MiArchivo(test_file, 'w') as f:
     f.write("Ejemplo de context manager\n")
 
 # Ejercicio 9: Decoradores simples
