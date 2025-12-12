@@ -25,3 +25,8 @@ message = input() # Solicita al usuario que ingrese un mensaje
 print (message)
 print (360)
 print ("360")
+project_budget = input("Ingresa el presupuesto del proyecto: ") # Solicita al usuario que ingrese el presupuesto del proyecto
+print (int(project_budget) + 1000) # Convierte project_budget a entero y suma 1000
+print ("14" +"km") # Concatenación de cadena
+x=5
+print (x)
