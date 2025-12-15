@@ -4,15 +4,17 @@ precios_en_dolares = [10, 25, 40, 5, 100]
 tasa_cambio = 0.92  # Supongamos que 1 dólar = 0.92 euros
 
 # Usar map con una función lambda para convertir los precios a euros
-precios_en_euros = list(map(lambda p: p * tasa_cambio, precios_en_dolares))
+precios_en_euros = list(map(lambda p: round(p * tasa_cambio, 2), precios_en_dolares))
+# Usar round para redondear a dos decimales
 
 # Filtrar los precios mayores a 20 euros usando filter y una función lambda
 baratos = list(filter(lambda p: p < 20, precios_en_euros))
 
 # Imprimir los resultados
 print(f"Precios en dólares ($): {[f'{p:.2f}' for p in precios_en_dolares]}")
-print(f"Precios en euros (€): {[f'{p:.2f}' for p in precios_en_euros]}")
+print(f"Precios en euros (€): {precios_en_euros}")
 print(f"Precios menores a 20 euros (€): {[f'{p:.2f}' for p in baratos]}")
+
 
 # Explicación:
 # 1. Se define una lista de precios en dólares.
@@ -22,3 +24,4 @@ print(f"Precios menores a 20 euros (€): {[f'{p:.2f}' for p in baratos]}")
 # Para conseguir los dos decimales en la impresión, se usa formateo de cadenas con f-strings.
 # Esto asegura que los precios se muestren con dos decimales en la salida.
 # .2f indica que queremos dos dígitos después del punto decimal.
+# round en la conversión asegura que los precios en euros también estén redondeados a dos decimales.
